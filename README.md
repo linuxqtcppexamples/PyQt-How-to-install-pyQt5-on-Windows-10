@@ -96,3 +96,17 @@ To automatically generate these bindings, Phil Thompson developed the tool SIP, 
 
 In August 2009, Nokia, the then owners of the Qt toolkit, released PySide, providing similar functionality, but under the LGPL,
 after failing to reach an agreement with Riverbank Computing to change its licensing terms to include LGPL as an alternative license.
+
+What is SIP?
+------------
+One of the features of Python that makes it so powerful is the ability to take existing libraries, written in C or C++, and make them available as Python extension modules. Such extension modules are often called bindings for the library.
+
+SIP is a collection of tools that makes it very easy to create Python bindings for C and C++ libraries. It was originally developed in 1998 to create PyQt, the Python bindings for the Qt toolkit, but can be used to create bindings for any C or C++ library. For example it is also used to generate wxPython, the Python bindings for wxWidgets.
+
+SIP comprises a set of build tools and a sip module. The build tools process a set of specification files and generates C or C++ code which is then compiled to create the bindings extension module. Several extension modules may be installed in the same Python package. Extension modules can be built so that they are are independent of the version of Python being used. In other words a wheel created from them can be installed with any version of Python starting with v3.5.
+
+The specification files contain a description of the interface of the C or C++ library, i.e. the classes, methods, functions and variables. The format of a specification file is almost identical to a C or C++ header file, so much so that the easiest way of creating a specification file is to edit a copy of the corresponding header file.
+
+The sip module provides support functions to the automatically generated code. The sip module is installed as part of the same Python package as the generated extension modules. Unlike the extension modules the sip module is specific to a particular version of Python (e.g. v3.5, v3.6, v3.7, v3.8).
+
+SIP makes it easy to exploit existing C or C++ libraries in a productive interpretive programming environment. SIP also makes it easy to take a Python application (maybe a prototype) and selectively implement parts of the application (maybe for performance reasons) in C or C++.
