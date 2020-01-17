@@ -76,6 +76,10 @@ Install some package for a specific version python, where ${version} is replaced
 
 pip${version} install some-package-name
 
+pip list -> it will display install packages
+pip show <installed package name> -> it will inoformation about installed packages like installation path
+
+
 PyQt:(https://en.wikipedia.org/wiki/PyQt)
 -----
 PyQt is a Python binding of the cross-platform GUI toolkit Qt, implemented as a Python plug-in. PyQt is free software developed by the
